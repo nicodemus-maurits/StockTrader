@@ -49,7 +49,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="#">Save Data</a>
+                <a href="#" @click="saveData">Save Data</a>
               </li>
               <li>
                 <a href="#">Load Data</a>
@@ -73,13 +73,23 @@ export default {
   },
   computed: {
     ...mapGetters({
-      funds: "funds"
+      funds: "funds",
+      stockPortfolio: "stockPortfolio",
+      stocks: "stocks"
     })
   },
   methods: {
     ...mapActions(["randomizeStocks"]),
     endDay() {
       this.randomizeStocks();
+    },
+    saveData() {
+      const data = {
+        funds: this.funds,
+        stockPortfolio: this.stockPortfolio,
+        stocks: this.stocks
+      };
+      this.$http.put("data.json", data);
     }
   }
 };
