@@ -1,35 +1,46 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link class="navbar-brand" to="/">Stock Trader</router-link>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <router-link to="/portfolio" active-class="active" tag="li" class="nav-item">
-          <a class="nav-link">Portfolio</a>
-        </router-link>
-        <router-link to="/stocks" active-class="active" tag="li" class="nav-item">
-          <a class="nav-link">Stocks</a>
-        </router-link>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item">
-          <a href="#" class="nav-link">End Day</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Save / Load</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Save Data</a>
-            <a class="dropdown-item" href="#">Load Data</a>
-          </div>
-        </li>
-      </ul>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <router-link class="navbar-brand" to="/">Stock Trader</router-link>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <router-link to="/portfolio" active-class="active" tag="li" class="nav-item">
+            <a>Portfolio</a>
+          </router-link>
+          <router-link to="/stocks" active-class="active" tag="li" class="nav-item">
+            <a>Stocks</a>
+          </router-link>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">End Day</a>
+          </li>
+          <li class="dropdown">
+            <a
+              class="dropdown-toggle"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Save / Load
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Save Data</a>
+              </li>
+              <li>
+                <a href="#">Load Data</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
