@@ -7,13 +7,24 @@
 
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <router-link to="/portfolio" active-class="active" tag="li" class="nav-item">
+          <router-link
+            to="/portfolio"
+            active-class="active"
+            tag="li"
+            class="nav-item"
+          >
             <a>Portfolio</a>
           </router-link>
-          <router-link to="/stocks" active-class="active" tag="li" class="nav-item">
+          <router-link
+            to="/stocks"
+            active-class="active"
+            tag="li"
+            class="nav-item"
+          >
             <a>Stocks</a>
           </router-link>
         </ul>
+        <strong class="navbar-text navbar-right">Funds: {{ funds }}</strong>
         <ul class="nav navbar-nav navbar-right">
           <li>
             <a href="#">End Day</a>
@@ -44,3 +55,15 @@
     </div>
   </nav>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters({
+      funds: "funds"
+    })
+  }
+};
+</script>
