@@ -31,7 +31,11 @@
           <li>
             <a href="#" @click="endDay">End Day</a>
           </li>
-          <li class="dropdown">
+          <li
+            class="dropdown"
+            :class="{ open: isDropdownOpen }"
+            @click="isDropdownOpen = !isDropdownOpen"
+          >
             <a
               class="dropdown-toggle"
               href="#"
@@ -62,6 +66,11 @@
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  data() {
+    return {
+      isDropdownOpen: false
+    };
+  },
   computed: {
     ...mapGetters({
       funds: "funds"
